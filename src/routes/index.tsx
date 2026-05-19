@@ -1,11 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import heroBread from "@/assets/hero-bread.jpg";
+import heroBread from "@/assets/photo-glazed-donut.png";
 import croissant from "@/assets/bread-croissant.jpg";
-import cinnamon from "@/assets/bread-cinnamon.jpg";
-import brioche from "@/assets/bread-brioche.jpg";
+import cinnamon from "@/assets/photo-strawberry-donut.png";
+import brioche from "@/assets/photo-cheese-donut.png";
 import baguette from "@/assets/bread-baguette.jpg";
 import milkbun from "@/assets/bread-milkbun.jpg";
+import jars from "@/assets/photo-jars.png";
+import milkSplash from "@/assets/photo-milk-splash.png";
+import pool from "@/assets/photo-pool.png";
 import aboutBakery from "@/assets/about-bakery.jpg";
 
 export const Route = createFileRoute("/")({
@@ -15,13 +18,13 @@ export const Route = createFileRoute("/")({
 const WHATSAPP = "https://wa.me/6281234567890?text=Halo%20Rotia%2C%20saya%20ingin%20pesan%20roti";
 
 const bestSellers = [
-  { name: "Sourdough Klasik", desc: "Fermentasi 24 jam, kerak renyah, tekstur lembut.", price: "Rp 65.000", img: heroBread },
+  { name: "Golden Glaze Donut", desc: "Donut empuk dengan glasir madu emas yang meleleh.", price: "Rp 18.000", img: heroBread },
   { name: "Butter Croissant", desc: "Lapisan tipis sempurna dengan butter premium Perancis.", price: "Rp 28.000", img: croissant },
-  { name: "Cinnamon Roll", desc: "Manis hangat dengan glasir vanilla yang meleleh.", price: "Rp 32.000", img: cinnamon },
-  { name: "Choco Brioche", desc: "Brioche lembut dengan dark chocolate Belgia.", price: "Rp 35.000", img: brioche },
+  { name: "Strawberry Donut", desc: "Glasir strawberry segar dengan topping buah pilihan.", price: "Rp 20.000", img: cinnamon },
+  { name: "Cheese Topping Donut", desc: "Topping keju mozzarella melimpah dengan selai strawberry.", price: "Rp 22.000", img: brioche },
 ];
 
-const gallery = [heroBread, croissant, cinnamon, brioche, baguette, milkbun];
+const gallery = [heroBread, brioche, cinnamon, jars, milkSplash, pool];
 
 const testimonials = [
   { name: "Sasha P.", role: "Pelanggan Setia", text: "Croissant-nya terbaik di kota. Tiap pagi saya selalu mampir sebelum kerja." },
