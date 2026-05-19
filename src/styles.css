@@ -62,26 +62,29 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --radius: 0.75rem;
+  /* Cream */
+  --background: oklch(0.97 0.02 80);
+  --foreground: oklch(0.25 0.04 50);
+  --card: oklch(0.985 0.012 80);
+  --card-foreground: oklch(0.25 0.04 50);
+  --popover: oklch(0.985 0.012 80);
+  --popover-foreground: oklch(0.25 0.04 50);
+  /* Warm brown */
+  --primary: oklch(0.38 0.07 50);
+  --primary-foreground: oklch(0.98 0.015 80);
+  /* Soft orange */
+  --secondary: oklch(0.78 0.13 55);
+  --secondary-foreground: oklch(0.25 0.04 50);
+  --muted: oklch(0.93 0.025 80);
+  --muted-foreground: oklch(0.45 0.04 50);
+  --accent: oklch(0.82 0.11 60);
+  --accent-foreground: oklch(0.25 0.04 50);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.88 0.03 70);
+  --input: oklch(0.9 0.025 75);
+  --ring: oklch(0.7 0.12 55);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -140,5 +143,28 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
+  h1, h2, h3, h4, .font-display {
+    font-family: "Playfair Display", Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes floatY {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-fade-up { animation: fadeUp 0.8s ease-out both; }
+.animate-float { animation: floatY 6s ease-in-out infinite; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up, .animate-float { animation: none; }
 }
