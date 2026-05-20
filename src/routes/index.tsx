@@ -1,33 +1,34 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import heroBread from "@/assets/photo-glazed-donut.png";
-import croissant from "@/assets/bread-croissant.jpg";
+import heroBread from "@/assets/gambar1.jpeg";
+import Rotimanis from "@/assets/gamabr3.jpeg";
 import cinnamon from "@/assets/photo-strawberry-donut.png";
 import brioche from "@/assets/photo-cheese-donut.png";
 import baguette from "@/assets/bread-baguette.jpg";
 import milkbun from "@/assets/bread-milkbun.jpg";
 import jars from "@/assets/photo-jars.png";
 import milkSplash from "@/assets/photo-milk-splash.png";
-import pool from "@/assets/photo-pool.png";
-import aboutBakery from "@/assets/about-bakery.jpg";
+import pool from "@/assets/gambar5.jpeg";
+import aboutBakery from "@/assets/gambar2.jpeg";
+import marmercake from "@/assets/gambar4.jpeg";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const WHATSAPP = "https://wa.me/6281234567890?text=Halo%20Rotia%2C%20saya%20ingin%20pesan%20roti";
+const WHATSAPP = "https://wa.me/6281548483030?text=Halo%20Rotia%2C%20saya%20ingin%20pesan%20roti";
 
 const bestSellers = [
-  { name: "Golden Glaze Donut", desc: "Donut empuk dengan glasir madu emas yang meleleh.", price: "Rp 18.000", img: heroBread },
-  { name: "Butter Croissant", desc: "Lapisan tipis sempurna dengan butter premium Perancis.", price: "Rp 28.000", img: croissant },
-  { name: "Strawberry Donut", desc: "Glasir strawberry segar dengan topping buah pilihan.", price: "Rp 20.000", img: cinnamon },
-  { name: "Cheese Topping Donut", desc: "Topping keju mozzarella melimpah dengan selai strawberry.", price: "Rp 22.000", img: brioche },
+  { name: "Golden Glaze Donut", desc: "Donut empuk dengan glasir madu emas yang meleleh.", price: "Rp 7.500", img: heroBread },
+  { name: "Roti Manis", desc: "Lapisan tipis sempurna dengan butter premium Perancis.", price: "Rp 10.000", img: Rotimanis },
+  { name: "Strawberry Donut", desc: "Glasir strawberry segar dengan topping buah pilihan.", price: "Rp 8.000", img: cinnamon },
+  { name: "Cheese Topping Donut", desc: "Topping keju mozzarella melimpah dengan selai strawberry.", price: "Rp 8.000", img: brioche },
 ];
 
-const gallery = [heroBread, brioche, cinnamon, jars, milkSplash, pool];
+const gallery = [heroBread, brioche, cinnamon, jars, milkSplash, pool, marmercake];
 
 const testimonials = [
-  { name: "Sasha P.", role: "Pelanggan Setia", text: "Croissant-nya terbaik di kota. Tiap pagi saya selalu mampir sebelum kerja." },
+  { name: "Sasha P.", role: "Pelanggan Setia", text: "Roti Manis-nya terbaik di kota. Tiap pagi saya selalu mampir sebelum kerja." },
   { name: "Bagas A.", role: "Food Blogger", text: "Sourdough Rotia punya karakter yang konsisten — kerak crispy, crumb lembap. Wajib coba." },
   { name: "Mira K.", role: "Pemilik Café", text: "Kami pakai roti Rotia untuk café kami. Kualitasnya selalu premium tiap hari." },
 ];
@@ -60,7 +61,7 @@ function Nav() {
         <ul className="hidden md:flex items-center gap-8 text-sm">
           {links.map(([l, h]) => (
             <li key={h}>
-              <a href={h} className="text-foreground/80 hover:text-primary transition-colors">
+              <a href={h} className="relative text-foreground/80 hover:text-primary transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full">
                 {l}
               </a>
             </li>
@@ -113,93 +114,64 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-32">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-accent/30 via-background to-background" />
-      <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-secondary/20 blur-3xl -z-10" />
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
-        <div className="animate-fade-up">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/30 text-primary text-xs font-medium tracking-wide uppercase mb-6">
-            Fresh bread everyday
-          </span>
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-[1.05]">
-            Roti Artisan,
-            <br />
-            <span className="italic text-secondary">dipanggang dengan cinta.</span>
-          </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-lg leading-relaxed">
-            Rotia menghadirkan roti premium yang dipanggang setiap pagi dari bahan terbaik. Hangat,
-            harum, dan selalu segar untuk hari Anda.
-          </p>
-          <div className="mt-9 flex flex-wrap gap-4">
-            <a
-              href={WHATSAPP}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-full font-medium hover:bg-primary/90 transition shadow-lg shadow-primary/20"
-            >
-              Order Now
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M13 5l7 7-7 7" />
-              </svg>
-            </a>
-            <a
-              href="#bestseller"
-              className="inline-flex items-center gap-2 border border-primary/30 text-primary px-7 py-3.5 rounded-full font-medium hover:bg-primary/5 transition"
-            >
-              Lihat Menu
-            </a>
-          </div>
-          <div className="mt-12 flex items-center gap-8 text-sm text-muted-foreground">
-            <div>
-              <div className="font-display text-3xl text-primary font-bold">12+</div>
-              <div>Tahun pengalaman</div>
-            </div>
-            <div className="w-px h-10 bg-border" />
-            <div>
-              <div className="font-display text-3xl text-primary font-bold">50+</div>
-              <div>Varian roti</div>
-            </div>
-            <div className="w-px h-10 bg-border" />
-            <div>
-              <div className="font-display text-3xl text-primary font-bold">5K+</div>
-              <div>Pelanggan bahagia</div>
-            </div>
-          </div>
-        </div>
-        <div className="relative animate-fade-up" style={{ animationDelay: "0.15s" }}>
-          <div className="absolute -inset-6 bg-gradient-to-tr from-secondary/40 to-accent/20 rounded-[3rem] blur-2xl" />
-          <img
-            src={heroBread}
-            alt="Roti sourdough artisan segar Rotia"
-            width={1536}
-            height={1024}
-            className="relative rounded-[2rem] shadow-2xl shadow-primary/20 animate-float"
-          />
-          <div className="absolute -bottom-6 -left-6 bg-card border border-border rounded-2xl shadow-xl p-4 flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full bg-secondary/30 flex items-center justify-center text-2xl">🥐</div>
-            <div>
-              <div className="text-xs text-muted-foreground">Baru dari oven</div>
-              <div className="font-semibold text-primary text-sm">06:00 Pagi</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section
+  id="top"
+  className="relative min-h-screen flex items-center justify-center overflow-hidden"
+>
+  {/* Background Image */}
+  <img
+    src={heroBread}
+    alt="Hero Bread"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+  {/* Overlay gelap */}
+  <div className="absolute inset-0 bg-black/40"></div>
+
+  {/* Content */}
+  <div className="relative z-10 text-center text-white px-6 max-w-4xl">
+    <span className="bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm uppercase tracking-widest">
+      Fresh Bread Everyday
+    </span>
+
+    <h1 className="mt-6 text-5xl md:text-7xl font-bold leading-tight">
+      Roti Premium <br />
+      Untuk Keluarga
+    </h1>
+
+    <p className="mt-6 text-lg md:text-xl text-white/90">
+      Hangat, lembut, dan selalu fresh setiap hari.
+    </p>
+
+    <div className="mt-8 flex gap-4 justify-center">
+      <button className="bg-primary px-8 py-4 rounded-full text-white font-semibold">
+        Order Sekarang
+      </button>
+
+      <button className="border border-white px-8 py-4 rounded-full text-white font-semibold">
+        Lihat Menu
+      </button>
+    </div>
+  </div>
+</section>
   );
 }
 
 function About() {
   return (
-    <section id="tentang" className="py-20 lg:py-28">
+    <section
+  id="tentang" 
+  className="py-20 lg:py-28 animate-fade-up"
+>
       <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
-        <div className="relative">
+        <div className="relative lg:-ml-10">
           <img
             src={aboutBakery}
             alt="Interior bakery Rotia"
             width={1280}
             height={1024}
             loading="lazy"
-            className="rounded-3xl shadow-xl"
+            className="rounded-3xl shadow-2xl w-full h-[700px] object-cover brightness-95"
           />
           <div className="absolute -bottom-8 -right-4 lg:-right-8 bg-primary text-primary-foreground p-6 rounded-2xl shadow-2xl max-w-[220px]">
             <div className="font-display text-2xl font-bold">Sejak 2012</div>
@@ -208,7 +180,7 @@ function About() {
         </div>
         <div>
           <span className="text-secondary uppercase tracking-widest text-xs font-semibold">Tentang Kami</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mt-3 leading-tight">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mt-3 leading-snug">
             Sebuah cerita tentang <em className="text-secondary">roti</em> dan kesabaran.
           </h2>
           <p className="mt-6 text-muted-foreground leading-relaxed">
@@ -220,19 +192,47 @@ function About() {
             Kami percaya roti terbaik adalah roti yang dibuat tanpa pengawet, dengan fermentasi alami,
             dan disajikan dalam keadaan paling segar.
           </p>
-          <div className="mt-8 grid grid-cols-2 gap-4">
-            {[
-              ["Bahan Premium", "Tepung & butter pilihan"],
-              ["Tanpa Pengawet", "100% alami"],
-              ["Fermentasi Lama", "Hingga 24 jam"],
-              ["Setiap Pagi", "Dipanggang fresh"],
-            ].map(([t, d]) => (
-              <div key={t} className="p-4 rounded-xl bg-muted/40 border border-border">
-                <div className="font-semibold text-primary">{t}</div>
-                <div className="text-xs text-muted-foreground mt-1">{d}</div>
-              </div>
-            ))}
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
+  <div className="bg-white/50 backdrop-blur border border-white/30 rounded-3xl p-6 hover:scale-105 transition duration-300 shadow-lg">
+    <div className="text-4xl mb-4">🥐</div>
+    <h3 className="text-xl font-bold text-primary">
+      Bahan Premium
+    </h3>
+    <p className="mt-2 text-muted-foreground">
+      Tepung dan butter kualitas terbaik.
+    </p>
+  </div>
+
+  <div className="bg-white/50 backdrop-blur border border-white/30 rounded-3xl p-6 hover:scale-105 transition duration-300 shadow-lg">
+    <div className="text-4xl mb-4">🌾</div>
+    <h3 className="text-xl font-bold text-primary">
+      Tanpa Pengawet
+    </h3>
+    <p className="mt-2 text-muted-foreground">
+      Dibuat fresh setiap hari.
+    </p>
+  </div>
+
+  <div className="bg-white/50 backdrop-blur border border-white/30 rounded-3xl p-6 hover:scale-105 transition duration-300 shadow-lg">
+    <div className="text-4xl mb-4">🔥</div>
+    <h3 className="text-xl font-bold text-primary">
+      Fresh From Oven
+    </h3>
+    <p className="mt-2 text-muted-foreground">
+      Dipanggang hangat setiap pagi.
+    </p>
+  </div>
+
+  <div className="bg-white/50 backdrop-blur border border-white/30 rounded-3xl p-6 hover:scale-105 transition duration-300 shadow-lg">
+    <div className="text-4xl mb-4">❤️</div>
+    <h3 className="text-xl font-bold text-primary">
+      Dibuat Dengan Hati
+    </h3>
+    <p className="mt-2 text-muted-foreground">
+      Resep keluarga dengan rasa autentik.
+    </p>
+  </div>
+</div>
         </div>
       </div>
     </section>
@@ -310,18 +310,24 @@ function Gallery() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {gallery.map((src, i) => (
             <div
-              key={i}
-              className={`overflow-hidden rounded-2xl ${i === 0 || i === 4 ? "md:row-span-2 md:aspect-auto" : "aspect-square"}`}
-            >
-              <img
-                src={src}
-                alt={`Galeri roti Rotia ${i + 1}`}
-                width={1024}
-                height={1024}
-                loading="lazy"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
+  key={i}
+  className={`group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 ${
+    i === 0 || i === 4
+      ? "md:row-span-2 md:aspect-auto"
+      : "aspect-square"
+  }`}
+>
+  <img
+    src={src}
+    alt={`Galeri roti Rotia ${i + 1}`}
+    width={1024}
+    height={1024}
+    loading="lazy"
+    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+  />
+
+  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition duration-500"></div>
+</div>
           ))}
         </div>
       </div>
@@ -372,7 +378,7 @@ function Contact() {
               <span className="w-10 h-10 shrink-0 rounded-full bg-secondary/30 flex items-center justify-center text-primary">📍</span>
               <div>
                 <div className="font-semibold text-primary">Alamat</div>
-                <div className="text-muted-foreground text-sm">Jl. Melati No. 12, Jakarta Selatan</div>
+                <div className="text-muted-foreground text-sm">The Savia F2.11 BSD City</div>
               </div>
             </li>
             <li className="flex gap-4">
@@ -386,7 +392,7 @@ function Contact() {
               <span className="w-10 h-10 shrink-0 rounded-full bg-secondary/30 flex items-center justify-center text-primary">📞</span>
               <div>
                 <div className="font-semibold text-primary">Telepon / WhatsApp</div>
-                <div className="text-muted-foreground text-sm">+62 812-3456-7890</div>
+                <div className="text-muted-foreground text-sm">+62 815-4848-3030</div>
               </div>
             </li>
           </ul>
@@ -403,7 +409,7 @@ function Contact() {
         <div className="rounded-3xl overflow-hidden shadow-xl border border-border min-h-[400px]">
           <iframe
             title="Lokasi Rotia"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.323!2d106.823!3d-6.2088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTInMzEuNyJTIDEwNsKwNDknMjIuOCJF!5e0!3m2!1sen!2sid!4v1700000000000"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.85366937165242!2d106.70192020697367!3d-6.308490106115706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e549892f03cd%3A0xa65dcbb386d2807c!2sMPR2%2BJQ2%2C%20Jl.%20PDAM-Persatuan%2C%20Ciater%2C%20Kec.%20Serpong%2C%20Kota%20Tangerang%20Selatan%2C%20Banten%2015310!5e0!3m2!1sid!2sid!4v1779205391363!5m2!1sid!2sid"
             width="100%"
             height="100%"
             style={{ border: 0, minHeight: 400 }}
@@ -424,7 +430,7 @@ function Instagram() {
         <div className="text-center mb-12">
           <span className="text-secondary uppercase tracking-widest text-xs font-semibold">Instagram</span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mt-3">
-            Ikuti @rotia.bakery
+            Ikuti @rotia
           </h2>
           <p className="mt-4 text-muted-foreground">Roti terbaru, di-update setiap hari.</p>
         </div>
